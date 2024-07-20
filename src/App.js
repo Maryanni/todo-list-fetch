@@ -39,7 +39,6 @@ function App() {
       label: inputValue.needToBeDone,
       is_done: false,
     };
-    console.log(bodyPost);
     try {
       const responsePost = await fetch(
         "https://playground.4geeks.com/todo/todos/maryanni",
@@ -58,6 +57,25 @@ function App() {
     }
   };
 
+  
+  const deleteCardList = async (todo_id) => {
+    try {
+      const responseDelete = await fetch(
+        `https://playground.4geeks.com/todo/todos/${todo_id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const dataDelete = await responseDelete.json();
+      getListCard();
+    } catch (error) {
+      
+    }
+  }
+
   useEffect(() => {
     getListCard();
   }, []);
@@ -67,6 +85,8 @@ function App() {
     postCardList();
     setInputValue({ needToBeDone: "" });
   };
+
+ 
 
   return (
     <div className="App Container classContainer">
@@ -91,7 +111,7 @@ function App() {
             return (
               <li className="list-group-item trushIcon" key={index}>
                 {item.label}
-                <span>
+                <span onClick={() => deleteCardList(item.id)}>
                   <i className="fa fa-regular fa-rectangle-xmark"></i>
                 </span>
               </li>

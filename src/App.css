@@ -58,3 +58,8 @@
   border: 0;
   width: 100%;
 }
+
+.trushIcon{
+  justify-content: space-between;
+  display: flex;
+}
