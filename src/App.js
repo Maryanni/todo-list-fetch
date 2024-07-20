@@ -69,7 +69,6 @@ function App() {
           },
         }
       );
-      const dataDelete = await responseDelete.json();
       getListCard();
     } catch (error) {
       
@@ -85,8 +84,6 @@ function App() {
     postCardList();
     setInputValue({ needToBeDone: "" });
   };
-
- 
 
   return (
     <div className="App Container classContainer">
