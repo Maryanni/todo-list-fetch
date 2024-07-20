@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.classContainer{
+  width: 100%;
+  background: #282c34;
+  justify-content: center;
+  display: flex;
+
+}
+
+.classDivPrincipal{
+  width: 50%;
+  background: whitesmoke;
+  padding: 80px;
+  border-radius: 1%;
+  margin-top: 2cm;
+  margin-bottom: 2cm;
+}
+
+.placeholderInput{
+  border: 0;
+  width: 100%;
+}
